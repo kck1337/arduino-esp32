@@ -13,14 +13,14 @@
 */
 
 // Change the SSID and PASSWORD here if needed
-const char * WIFI_FTM_SSID = "WiFi_FTM_Responder"; // SSID of AP that has FTM Enabled
-const char * WIFI_FTM_PASS = "ftm_responder"; // STA Password
+const char * WIFI_FTM_SSID = "PORTAL_1"; // SSID of AP that has FTM Enabled
+const char * WIFI_FTM_PASS = "password"; // STA Password
 
 // FTM settings
 // Number of FTM frames requested in terms of 4 or 8 bursts (allowed values - 0 (No pref), 16, 24, 32, 64)
 const uint8_t FTM_FRAME_COUNT = 16;
 // Requested time period between consecutive FTM bursts in 100’s of milliseconds (allowed values - 0 (No pref) or 2-255)
-const uint16_t FTM_BURST_PERIOD = 2;
+const uint16_t FTM_BURST_PERIOD = 4;
 
 // Semaphore to signal when FTM Report has been received
 xSemaphoreHandle ftmSemaphore;
@@ -82,9 +82,10 @@ void setup() {
   Serial.println(" ms");
 
   // Request FTM reports until one fails
-  while(getFtmReport());
+  
 }
 
 void loop() {
+  while(getFtmReport());
   delay(1000);
 }
