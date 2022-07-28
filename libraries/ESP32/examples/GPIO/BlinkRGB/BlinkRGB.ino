@@ -11,9 +11,11 @@
   WARNING: After using digitalWrite to drive RGB LED it will be impossible to drive the same pin
     with normal HIGH/LOW level
 */
-//#define RGB_BRIGHTNESS 64 // Change white brightness (max 255)
+#define RGB_BRIGHTNESS 64 // Change white brightness (max 255)
 
 // the setup function runs once when you press reset or power the board
+
+#define RGB_BUILTIN 18
 
 void setup() {
   // No need to initialize the RGB LED
